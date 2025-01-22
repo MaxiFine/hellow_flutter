@@ -69,49 +69,87 @@ import 'package:flutter/material.dart';
 // }
 // ADDED IMAGE BACKGROUND
 
+// class Background extends StatelessWidget {
+//   const Background({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Background Page'),
+//         backgroundColor: Colors.blue,
+//       ),
+//       body: Container(
+//         decoration: const BoxDecoration(
+//           gradient: LinearGradient(
+//             colors: [
+//               Colors.blue,
+//               Colors.green,
+//             ],
+//             begin: Alignment.topLeft,
+//             end: Alignment.bottomRight,
+//           ),
+//         ),
+//         child: Center(
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               // // Add the image
+//               // Image.asset(
+//               //   'assets/images/background.webp',
+//               //   width: double.infinity,
+//               //   height:   double.infinity
+//               //   fit: BoxFit.cover,
+//               // ),
+//               // const SizedBox(height: 20),
+//               ElevatedButton(
+//                 onPressed: () {
+//                   // Navigate back to the previous page
+//                   Navigator.pop(context);
+//                 },
+//                 child: const Text('Go Back'),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// ADDING WITH GRADIENT
+
 class Background extends StatelessWidget {
   const Background({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Background Page'),
-        backgroundColor: Colors.blue,
-      ),
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.blue,
-              Colors.green,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Add the image
-              Image.asset(
-                'assets/images/background.webp',
-                width: 200,
-                height: 200,
-                fit: BoxFit.cover,
+      body: Stack(
+        children: [
+          SizedBox(
+            width: double.infinity,
+            height: double.infinity,
+            child: FittedBox(
+              fit: BoxFit.cover,
+              child: Image.asset(
+                "assets/images/background.webp",
               ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  // Navigate back to the previous page
-                  Navigator.pop(context);
-                },
-                child: const Text('Go Back'),
-              ),
-            ],
+            ),
           ),
-        ),
+          Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Colors.black54,
+                  Colors.transparent,
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'background.dart'; // Import the Background page
 
 void main() {
   runApp(const MyApp());
@@ -6,13 +7,13 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Max App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-       
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
         useMaterial3: true,
       ),
@@ -56,6 +57,17 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            const SizedBox(height: 20), // Add some spacing
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to the Background page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Background()),
+                );
+              },
+              child: const Text('Go to Background Page'),
+            ),
           ],
         ),
       ),
@@ -63,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }

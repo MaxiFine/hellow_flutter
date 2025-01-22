@@ -10,12 +10,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Max App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
        
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page First Max App'),
+      home: const MyHomePage(title: 'Max App Learning'),
     );
   }
 }
@@ -49,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Max have pushed the button this many times:',
+              'Max have pushed times:',
             ),
             Text(
               '$_counter',

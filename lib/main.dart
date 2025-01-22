@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'background.dart'; // Import the Background page
+import 'background.dart'; 
 
 void main() {
   runApp(const MyApp());

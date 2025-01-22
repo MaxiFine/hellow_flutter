@@ -119,6 +119,45 @@ import 'package:flutter/material.dart';
 
 // ADDING WITH GRADIENT
 
+// class Background extends StatelessWidget {
+//   const Background({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Stack(
+//         children: [
+//           SizedBox(
+//             width: double.infinity,
+//             height: double.infinity,
+//             child: FittedBox(
+//               fit: BoxFit.cover,
+//               child: Image.asset(
+//                 "assets/images/background.webp",
+//               ),
+//             ),
+//           ),
+//           Container(
+//             decoration: const BoxDecoration(
+//               gradient: LinearGradient(
+//                 colors: [
+//                   Colors.blueGrey,
+//                   Colors.transparent,
+//                 ],
+//                 begin: Alignment.topCenter,
+//                 end: Alignment.bottomCenter,
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+
+// FINAL CONFIGS
+
 class Background extends StatelessWidget {
   const Background({super.key});
 
@@ -127,25 +166,33 @@ class Background extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          // Fullscreen background image
           SizedBox(
             width: double.infinity,
             height: double.infinity,
             child: FittedBox(
               fit: BoxFit.cover,
-              child: Image.asset(
-                "assets/images/background.webp",
+              child: Image.asset("assets/images/background.webp",
               ),
             ),
           ),
-          Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Colors.black54,
-                  Colors.transparent,
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
+          // Add a "Go Back" button
+          SafeArea(
+            child: Align(
+              alignment: Alignment.topLeft,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.pop(context); // Navigate back to the home page
+                  },
+                  icon: const Icon(Icons.arrow_back),
+                  label: const Text('Go Back'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black54, // Semi-transparent button
+                    foregroundColor: Colors.white,
+                  ),
+                ),
               ),
             ),
           ),

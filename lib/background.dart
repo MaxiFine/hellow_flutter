@@ -187,7 +187,7 @@ class Background extends StatelessWidget {
                     Navigator.pop(context); // Navigate back to the home page
                   },
                   icon: const Icon(Icons.arrow_back),
-                  label: const Text('Go Back'),
+                  label: const Text('Home'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black54, // Semi-transparent button
                     foregroundColor: Colors.white,

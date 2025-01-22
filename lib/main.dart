@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(builder: (context) => const Background()),
                 );
               },
-              child: const Text('Go to Background Page'),
+              child: const Text('Background Page'),
             ),
           ],
         ),
